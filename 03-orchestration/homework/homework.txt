@@ -1,39 +1,23 @@
-Question 1: Context Engineering
-After trying the same prompt in ChatGPT vs Kestra's AI Copilot, what is the primary reason Copilot generates better Kestra flows?
+Question 1: After trying the same prompt in ChatGPT vs Kestra's AI Copilot, what is the primary reason Copilot generates better Kestra flows?
 
 Answer 1: Copilot has access to current Kestra plugin documentation
 
-Question 2: RAG Comparison
-Run both 1_chat_without_rag.yaml and 2_chat_with_rag.yaml and compare their outputs. Both ask: "Which features were released in Kestra 1.1?"
+Question 2: The non-RAG response about Kestra 1.1 features is best described as:
 
-What difference do you observe?
+Answer 2: Vague, generic, or fabricated — the model guesses from training data
 
-Answer 2: RAG version provides specific, accurate feature details grounded in the documentation
+Question 3: What is the approximate output token count for multilingual_agent when running with summary_length = short?
 
-Question 3: Token Usage
-Run 3_simple_agent.yaml twice:
+Anwser 3: 60-100 tokens
 
-First with summary_length = short
-Second with summary_length = long
-Check the token usage logged at the end of each execution. How does token usage differ between short and long summaries for the multilingual_agent task?
+Question 4: With summary_length = long, roughly how many times more output tokens does multilingual_agent use compared to the short summary?
 
-Anwser 3: Long summary uses 2-4x more output tokens than short summary
+Answer 4: 2-5x more
 
-Question 4: Agent Autonomy
-Run 4_web_research_agent.yaml with the default research topic about data orchestration trends.
+Question 5: After changing english_brevity to ask for 3 sentences instead of 1, how does the output token count compare to the original 1-sentence version?
 
-In this flow, who decides when to use the web search tool?
+Answer 5: About the same (within 20%)
 
-Answer 4: The agent autonomously decides based on the prompt and system message
-
-Question 5: Multi-Agent Collaboration
-Examine 5_multi_agent_research.yaml and run it with the default company (kestra.io).
-
-What is the role of the research agent in this multi-agent system?
-
-Answer 5: It serves as a tool for the main agent to gather web data
-
-Question 6: Best Practices
-Based on what you learned in this module, for production workflows requiring deterministic, repeatable results with strict compliance requirements (e.g., financial reporting, workflows in highly regulated industries), which approach is most appropriate?
+Question 6: For production workflows requiring deterministic, repeatable results with strict compliance requirements, which approach is most appropriate
 
 Answer 6: Use traditional task-based workflows for predictability and auditability
